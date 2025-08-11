@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+
+  <!-- Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- 外部CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <a class="back" href="./index.html">Home</a>
+  <h1>Portfolio</h1>
+</header>
+
+<section class="year" aria-labelledby="y2025">
+  <h2 id="y2025" class="year__label">2025</h2>
+
+  <div class="work">
+    <a class="thumb" href="https://www.youtube.com/watch?v=aVZXsJxwBGk" target="_blank" rel="noopener">
+      <img alt="トンデモワンダーズ">
+    </a>
+    <div class="meta">
+      <h3 class="title">トンデモワンダーズ</h3>
+      <p class="role">監督・動画編集 / Produced by つくぶい！</p>
+    </div>
+  </div>
+</section>
+
+<section class="year" aria-labelledby="y2024">
+  <h2 id="y2024" class="year__label">2024</h2>
+
+  <div class="work">
+    <a class="thumb" href="https://www.youtube.com/watch?v=9uSAnPYJOg8" target="_blank" rel="noopener">
+      <img alt="作品タイトル">
+    </a>
+    <div class="meta">
+      <h3 class="title">灼熱にて純情</h3>
+      <p class="role">監督・動画編集 / Produced by つくぶい！</p>
+    </div>
+  </div>
+
+  <div class="work">
+    <a class="thumb" href="https://www.youtube.com/watch?v=HjWQhF0PE_A" target="_blank" rel="noopener">
+      <img alt="作品タイトル">
+    </a>
+    <div class="meta">
+      <h3 class="title">三原色</h3>
+      <p class="role">監督・動画編集 / Produced by つくぶい！</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  // URLからYouTubeの動画IDを抽出（watch/embed/shorts/youtu.be）
+  function extractYouTubeId(urlStr){
+    try{
+      const u = new URL(urlStr);
+      const host = u.hostname.replace(/^www\./,'');
+      if (host === 'youtu.be') return u.pathname.slice(1) || null;
+      if (host.endsWith('youtube.com')){
+        if (u.pathname.startsWith('/watch'))  return u.searchParams.get('v');
+        if (u.pathname.startsWith('/embed/')) return u.pathname.split('/')[2] || null;
+        if (u.pathname.startsWith('/shorts/'))return u.pathname.split('/')[2] || null;
+      }
+    }catch(e){}
+    return null;
+  }
+
+  // すべてのサムネ枠に hqdefault を設定（高解像度は使わない）
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.work a.thumb').forEach(a => {
+      const img = a.querySelector('img');
+      if (!img) return;
+      const id = extractYouTubeId(a.href);
+      if (!id) return;
+      img.src = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+    });
+  });
+</script>
+
+</body>
+</html>
