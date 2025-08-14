@@ -36,9 +36,11 @@ h1 { margin:0; font-size:28px; font-weight:700; }
   gap:16px;
   align-items:flex-start;          /* タイトル上辺＝サムネ上辺 */
   justify-content:flex-start;      /* 左寄せに変更 */
-  width:min(92vw, 760px);           /* 横幅固定でズレ防止 */
+  width:min(92vw, 780px);           /* 横幅固定でズレ防止 */
   margin:12px 0;
+  transform: translateX(160px); /* 右へ20pxずらす */
 }
+
 .work a.thumb { display:block; flex-shrink:0; }
 .work a.thumb img {
   width:220px;
