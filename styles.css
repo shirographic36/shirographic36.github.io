@@ -15,16 +15,30 @@ body {
 }
 
 /* ヘッダー */
-header { padding:20px 40px; text-align:center; }
-header a.back {
-  color:var(--text);
-  text-decoration:none;
-  font-size:14px;
-  display:inline-block;
-  margin-bottom:6px;
+header {
+  padding: 20px 40px;
+  text-align: center;
 }
-header a.back:hover{ text-decoration:underline; }
-h1 { margin:0; font-size:28px; font-weight:700; }
+
+header a.back {
+  color: inherit;           /* 親の色に合わせる */
+  text-decoration: none;    /* 下線なし */
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+header a.back:hover {
+  text-decoration: none;    /* ホバーでも下線なし */
+  color: inherit;           /* ホバーでも色変化なし */
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
 
 /* 年＋作品レイアウト */
 .year { padding:0 40px; margin:32px 0; text-align:center; }
@@ -52,3 +66,16 @@ h1 { margin:0; font-size:28px; font-weight:700; }
 .work .meta { display:grid; gap:4px; text-align:left; }
 .work .title { margin:0; font-size:18px; font-weight:700; }
 .work .role  { margin:0; font-size:14px; color:var(--muted); }
+
+footer {
+  padding-bottom: 120px; /* 下に余白を追加 */
+}
+
+footer a {
+  color: inherit;          /* 親要素と同じ色にする */
+  text-decoration: none;   /* 下線を消す */
+}
+footer a:hover {
+  text-decoration: none;   /* ホバー時も下線なし */
+  color: inherit;          /* ホバー時も色変化なし */
+}
