@@ -1,43 +1,80 @@
 /* ベース */
 :root { --bg:#fff5f2; --text:#000; --muted:#555; }
 html, body { height:100%; margin:0; }
-body { background:var(--bg); color:var(--text); font-family:"Inter",system-ui,sans-serif; }
+body {
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Inter",system-ui,sans-serif;
+  display:flex;
+  flex-direction:column;
+  align-items:center;     /* 横中央 */
+  min-height:100vh;
+  text-align:center;
+}
 
 /* ヘッダー */
-header { padding:20px 40px; text-align:center; }
-header a.back { color:var(--text); text-decoration:none; font-size:14px; display:inline-block; margin-bottom:6px; }
-header a.back:hover{ text-decoration:underline; }
+header {
+  padding:20px 40px;
+  text-align:center;
+}
+header a.back {
+  color:var(--text);
+  text-decoration:none;
+  font-size:14px;
+  display:inline-block;
+  margin-bottom:6px;
+}
+header a.back:hover { text-decoration:underline; }
 h1 { margin:0; font-size:28px; font-weight:700; }
 
 /* 年＋作品レイアウト */
-.year { padding:0 40px; margin:32px 0; text-align:center; }
-.year__label { margin:0 0 14px; font-size:18px; font-weight:700; }
+.year {
+  padding:0 40px;
+  margin:32px 0;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.year__label {
+  margin:0 0 14px;
+  font-size:18px;
+  font-weight:700;
+}
 
 /* 作品行 */
 .work {
   display:flex;
   gap:16px;
-  align-items:flex-start;  /* タイトル上辺＝サムネ上辺 */
+  align-items:flex-start;  /* 上端揃え */
   justify-content:center;  /* 全体中央寄せ */
   margin:12px 0;
 }
-.work a.thumb { display:block; flex-shrink:0; }
+.work a.thumb {
+  display:block;
+  flex-shrink:0;
+}
 .work a.thumb img {
+  display:block;            /* ベースライン起因のズレ防止 */
   width:220px;
   aspect-ratio:16/9;
   object-fit:cover;
   background:#d1d5d8;
-  display:block;
 }
-.work .meta { display:grid; gap:4px; text-align:left; }
-.work .title { margin:0; font-size:18px; font-weight:700; }
-.work .role  { margin:0; font-size:14px; color:var(--muted); }
-
-/* ページ全体を中央寄せ（縦横）したい場合 */
-body {
-  display:flex;
-  flex-direction:column;
-  align-items:center;    /* 横中央 */
-  min-height:100vh;
-  text-align:center;
+.work .meta {
+  display:grid;
+  gap:4px;
+  text-align:left;
+  align-self:flex-start;    /* 上端に固定 */
+}
+.work .title {
+  margin:0;
+  font-size:18px;
+  font-weight:700;
+  line-height:1.2;
+}
+.work .role {
+  margin:4px 0 0;
+  font-size:14px;
+  color:var(--muted);
 }
