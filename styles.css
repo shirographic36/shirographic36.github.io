@@ -39,20 +39,37 @@ h1 {
   font-weight: 700;
 }
 
+/* タブ（Movie/Graphic 共通） */
+.tabs{
+  display:flex;
+  gap:40px;
+  justify-content:center;
+  margin:12px 0 28px;
+}
+.tabs a{
+  font-weight:700;
+  font-size:18px;
+  text-decoration:none;
+  color:inherit;
+  padding-bottom:4px;
+}
+.tabs a.active{
+  border-bottom:3px solid currentColor;
+}
 
 /* 年＋作品レイアウト */
 .year { padding:0 40px; margin:32px 0; text-align:center; }
 .year__label { margin:0 0 14px; font-size:18px; font-weight:700; }
 
-/* 作品行 */
+/* 作品行（Movie想定レイアウト） */
 .work {
   display:flex;
   gap:16px;
   align-items:flex-start;          /* タイトル上辺＝サムネ上辺 */
   justify-content:flex-start;      /* 左寄せに変更 */
-  width:min(92vw, 780px);           /* 横幅固定でズレ防止 */
+  width:min(92vw, 780px);          /* 横幅固定でズレ防止 */
   margin:12px 0;
-  transform: translateX(160px); /* 右へ20pxずらす */
+  transform: translateX(160px);    /* ※Movieページの見た目調整 */
 }
 
 .work a.thumb { display:block; flex-shrink:0; }
@@ -79,3 +96,52 @@ footer a:hover {
   text-decoration: none;   /* ホバー時も下線なし */
   color: inherit;          /* ホバー時も色変化なし */
 }
+
+/* ============================== */
+/* Graphic 専用の上書き（ここから） */
+/* ============================== */
+
+body.graphic .year{
+  /* Movieと同じ中央列幅にして、要素の“列”自体を中央寄せ */
+  width:min(92vw, 780px);
+  margin:32px auto;
+  padding:0 40px;
+  text-align:center;
+}
+
+/* 1件ずつ“縦並び”。左→右の二段構成を解除して、中央の1カラムに */
+body.graphic .work{
+  display:block;
+  width:100%;
+  margin:28px auto 36px;
+  padding:0;
+  border:none;
+  background:transparent;
+  transform:none;                 /* Movieのtranslateを無効化 */
+}
+
+/* 画像：全面表示（非トリミング）。灰色背景は消す。比率は画像のまま */
+body.graphic .work a.thumb{
+  display:block;
+  width:100%;
+}
+body.graphic .work a.thumb img{
+  width:50%;
+  height:auto;
+  object-fit:contain;
+  aspect-ratio:auto;
+  background:transparent;         /* 灰色帯を撤去 */
+  border-radius:0;
+  margin:0 auto;
+  display:block;
+}
+
+/* テキストは“画像の下”。左寄せは維持（Movieと同じ） */
+body.graphic .work .meta{
+  margin-top:8px;
+  text-align:center;
+}
+
+/* ============================== */
+/* Graphic 専用の上書き（ここまで） */
+/* ============================== */

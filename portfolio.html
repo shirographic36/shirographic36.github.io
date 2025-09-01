@@ -12,12 +12,38 @@
 
   <!-- 外部CSS -->
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* タブナビゲーション */
+    .tabs {
+      display:flex;
+      gap:40px;
+      justify-content:center;
+      margin:16px 0 32px;
+    }
+    .tabs a {
+      font-weight:700;
+      font-size:18px;
+      text-decoration:none;
+      color:#000;
+      padding-bottom:4px;
+    }
+    .tabs a.active {
+      border-bottom:3px solid #000;
+    }
+  </style>
 </head>
 <body>
 
 <header>
   <a class="back" href="./index.html">HOME</a>
   <h1>Portfolio</h1>
+
+  <!-- Movie / Graphic Design の切替 -->
+  <nav class="tabs">
+    <a href="./portfolio.html" class="active">Movie</a>
+    <a href="./portfolio_graphic.html">Graphic Design</a>
+  </nav>
 </header>
 
 <section class="year" aria-labelledby="y2025">
@@ -86,8 +112,6 @@
   <a class="back" href="./index.html">HOME</a>
 </footer>
 
-
-
 <script>
   // URLからYouTubeの動画IDを抽出（watch/embed/shorts/youtu.be）
   function extractYouTubeId(urlStr){
@@ -104,7 +128,7 @@
     return null;
   }
 
-  // すべてのサムネ枠に hqdefault を設定（高解像度は使わない）
+  // すべてのサムネ枠に hqdefault を設定
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.work a.thumb').forEach(a => {
       const img = a.querySelector('img');
@@ -118,5 +142,3 @@
 
 </body>
 </html>
-
-
