@@ -83,20 +83,4 @@ body.graphic .work .meta{
 /* Graphic 専用の上書き（ここまで） */
 /* ============================== */
 
-/* DemoReel 用 */
-.work--demo .thumb.thumb--demo { width:300px; } /* 200px の1.5倍 */
-.player {
-  position: fixed; inset: 0; display: grid; place-items: center;
-  background: rgba(0,0,0,.6); padding: 24px; z-index: 9999;
-}
-.player[hidden] { display:none; }
-.player__inner { width:min(960px, 90vw); aspect-ratio:16/9; position:relative; }
-.player__inner iframe { width:100%; height:100%; border:0; border-radius:8px; background:#000; }
-.player__close {
-  position:absolute; top:-40px; right:0; font-size:24px; line-height:1;
-  background:#fff; border:1px solid #ddd; border-radius:999px; width:36px; height:36px; cursor:pointer;
-}
-@media (max-width: 640px){
-  .work--demo .thumb.thumb--demo { width:260px; }
-}
 
