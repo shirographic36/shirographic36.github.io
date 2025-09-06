@@ -3,36 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio - Graphic Design</title>
+  <title>Portfolio</title>
 
   <!-- Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- 外部CSS（動画ページと共通にできる） -->
+  <!-- 外部CSS -->
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    body {
-      font-family:"Inter",system-ui,sans-serif;
-      margin:0;
-      background:#fff5f2;
-      color:#000;
-    }
-    header, footer {
-      text-align:center;
-      padding:16px;
-    }
-    .back {
-      font-size:14px;
-      text-decoration:none;
-      color:#000;
-    }
-    .back:hover { text-decoration:underline; }
-    h1 { margin:8px 0 16px; }
-
-    /* タブ */
+    /* タブナビゲーション */
     .tabs {
       display:flex;
       gap:40px;
@@ -46,36 +28,9 @@
       color:#000;
       padding-bottom:4px;
     }
-    .tabs a.active { border-bottom:3px solid #000; }
-
-    /* 一覧レイアウト */
-    .year { max-width:900px; margin:0 auto 40px; padding:0 16px; }
-    .year__label { font-size:24px; margin-bottom:16px; text-align:center; }
-
-    .work {
-      display:flex;
-      gap:16px;
-      align-items:center;
-      margin-bottom:24px;
-      background:#fff;
-      border:1px solid #ddd;
-      border-radius:8px;
-      padding:12px;
+    .tabs a.active {
+      border-bottom:3px solid #000;
     }
-    .work .thumb {
-      width:200px;
-      flex-shrink:0;
-      display:block;
-    }
-    .work .thumb img {
-      width:100%;
-      height:100%;
-      object-fit:contain; /* 全体が表示される */
-      background:#eee;
-      border-radius:4px;
-    }
-    .meta .title { margin:0 0 8px; font-size:20px; }
-    .meta .role { margin:0; color:#555; font-size:14px; }
   </style>
 </head>
 <body>
@@ -83,72 +38,72 @@
 <header>
   <a class="back" href="./index.html">HOME</a>
   <h1>Portfolio</h1>
+
+  <!-- Movie / Graphic Design の切替 -->
   <nav class="tabs">
-    <a href="./portfolio.html">Movie</a>
-    <a href="./portfolio_graphic.html" class="active">Graphic Design</a>
+    <a href="./portfolio.html" class="active">Movie</a>
+    <a href="./portfolio_graphic.html">Graphic Design</a>
   </nav>
 </header>
 
-<section class="year" aria-labelledby="g2025">
-  <h2 id="g2025" class="year__label">2025</h2>
+<section class="year" aria-labelledby="y2025">
+  <h2 id="y2025" class="year__label">2025</h2>
 
   <div class="work">
-    <a class="thumb" href="images/poster_akebi.png" target="_blank">
-      <img src="images/poster_akebi.png" alt="ポスター作品 Akebi">
+    <a class="thumb" href="https://www.youtube.com/watch?v=aVZXsJxwBGk" target="_blank" rel="noopener">
+      <img alt="トンデモワンダーズ">
     </a>
     <div class="meta">
-      <h3 class="title">Poster Akebi</h3>
-      <p class="role">Graphic Design</p>
+      <h3 class="title">トンデモワンダーズ</h3>
+      <p class="role">監督・動画編集 / Produced by つくぶい！</p>
     </div>
   </div>
 
   <div class="work">
-    <a class="thumb" href="images/poster_aneiri.png" target="_blank">
-      <img src="images/poster_aneiri.png" alt="ポスター作品 Aneiri">
+    <a class="thumb" href="https://www.youtube.com/watch?v=9uSAnPYJOg8" target="_blank" rel="noopener">
+      <img alt="作品タイトル">
     </a>
     <div class="meta">
-      <h3 class="title">Poster Aneiri</h3>
-      <p class="role">Graphic Design</p>
+      <h3 class="title">灼熱にて純情</h3>
+      <p class="role">監督・動画編集 / Produced by つくぶい！</p>
+    </div>
+  </div>
+</section>
+
+<section class="year" aria-labelledby="y2024">
+  <h2 id="y2024" class="year__label">2024</h2>
+
+  <div class="work">
+    <a class="thumb" href="https://www.youtube.com/watch?v=HjWQhF0PE_A" target="_blank" rel="noopener">
+      <img alt="作品タイトル">
+    </a>
+    <div class="meta">
+      <h3 class="title">三原色</h3>
+      <p class="role">監督・動画編集 / Produced by つくぶい！</p>
+    </div>
+  </div>
+</section>
+
+<section class="year" aria-labelledby="y2023">
+  <h2 id="y2023" class="year__label">2023</h2>
+
+  <div class="work">
+    <a class="thumb" href="https://www.youtube.com/watch?v=SNYNioY_yR4" target="_blank" rel="noopener">
+      <img alt="作品タイトル">
+    </a>
+    <div class="meta">
+      <h3 class="title">いけないボーダーライン</h3>
+      <p class="role">監督・イラスト（線画/仕上げ） / Produced by つくぶい！</p>
     </div>
   </div>
 
   <div class="work">
-    <a class="thumb" href="images/poster_kanade.png" target="_blank">
-      <img src="images/poster_kanade.png" alt="ポスター作品 Kanade">
+    <a class="thumb" href="https://www.youtube.com/watch?v=rBV61nfV24A" target="_blank" rel="noopener">
+      <img alt="作品タイトル">
     </a>
     <div class="meta">
-      <h3 class="title">Poster Kanade</h3>
-      <p class="role">Graphic Design</p>
-    </div>
-  </div>
-
-  <div class="work">
-    <a class="thumb" href="images/poster_sorahanalux.png" target="_blank">
-      <img src="images/poster_sorahanalux.png" alt="ポスター作品 Sorahanalux">
-    </a>
-    <div class="meta">
-      <h3 class="title">Poster Sorahanalux</h3>
-      <p class="role">Graphic Design</p>
-    </div>
-  </div>
-
-  <div class="work">
-    <a class="thumb" href="images/poster_tachibanamao.png" target="_blank">
-      <img src="images/poster_tachibanamao.png" alt="ポスター作品 Tachibana Mao">
-    </a>
-    <div class="meta">
-      <h3 class="title">Poster Tachibana Mao</h3>
-      <p class="role">Graphic Design</p>
-    </div>
-  </div>
-
-  <div class="work">
-    <a class="thumb" href="images/poster_yuzukiray.png" target="_blank">
-      <img src="images/poster_yuzukiray.png" alt="ポスター作品 Yuzuki Ray">
-    </a>
-    <div class="meta">
-      <h3 class="title">Poster Yuzuki Ray</h3>
-      <p class="role">Graphic Design</p>
+      <h3 class="title">少女レイ</h3>
+      <p class="role">監督 / Produced by つくぶい！</p>
     </div>
   </div>
 </section>
@@ -156,6 +111,34 @@
 <footer>
   <a class="back" href="./index.html">HOME</a>
 </footer>
+
+<script>
+  // URLからYouTubeの動画IDを抽出（watch/embed/shorts/youtu.be）
+  function extractYouTubeId(urlStr){
+    try{
+      const u = new URL(urlStr);
+      const host = u.hostname.replace(/^www\./,'');
+      if (host === 'youtu.be') return u.pathname.slice(1) || null;
+      if (host.endsWith('youtube.com')){
+        if (u.pathname.startsWith('/watch'))  return u.searchParams.get('v');
+        if (u.pathname.startsWith('/embed/')) return u.pathname.split('/')[2] || null;
+        if (u.pathname.startsWith('/shorts/'))return u.pathname.split('/')[2] || null;
+      }
+    }catch(e){}
+    return null;
+  }
+
+  // すべてのサムネ枠に hqdefault を設定
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.work a.thumb').forEach(a => {
+      const img = a.querySelector('img');
+      if (!img) return;
+      const id = extractYouTubeId(a.href);
+      if (!id) return;
+      img.src = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+    });
+  });
+</script>
 
 </body>
 </html>
